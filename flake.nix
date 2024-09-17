@@ -24,8 +24,8 @@
             # };
           in
           with pkgs;
-        rec {
-          packages = import ./nix {inherit pkgs;};
+         {
+          # packages = import ./nix {inherit pkgs;};
           apps = {
             cellprofiler = {
               type = "app";
