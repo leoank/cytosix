@@ -1,0 +1,33 @@
+[project]
+name = "cytosix"
+version = "0.1.0"
+description = "Cytodata 2024 Hackathon"
+authors = [{ name = "Ankur Kumar", email = "ank@leoank.me" }]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "lark[interegular]>=1.2",
+  "click~=8.1",
+  "numpy<=1.26.4",
+  "cloudpathlib[all]>=0.18,<1.0",
+  "joblib<=1.4",
+]
+
+[project.scripts]
+cytosix = "cytosix.cli:main"
+
+[build-system]
+# setuptools>=61 supports PEPs 517, 518, 621, 660
+# https://setuptools.pypa.io/en/latest/history.html#v61-0-0
+# setuptools-scm asks for setuptools>=64
+# https://setuptools-scm.readthedocs.io/en/latest/
+requires = ["setuptools>=64.0.0", "setuptools-scm>=8.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.ruff]
+select = ["ANN", "C90", "D", "E", "F", "I", "N", "NPY", "PTH", "TID", "UP", "W"]
+exclude = ["vendor"]
+ignore = ["ANN101"]
+
+[tool.basedpyright]
+typeCheckingMode = "basic"
